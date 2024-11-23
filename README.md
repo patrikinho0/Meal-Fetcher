@@ -1,47 +1,48 @@
-# 🏍️ Motorcycle Info Fetcher
+# 🍽️ Meal Finder App
 
-This project is a React application that fetches detailed information about motorcycles using the API Ninjas API. The app allows users to search for specific motorcycles and view their specifications, including engine type, power, and more.
+This project is a React application that allows users to search for meals and view detailed information about them using the **TheMealDB API**. The app is designed to provide a smooth and visually appealing experience for users to discover recipes, ingredients, and cooking instructions.
 
 ## ✨ Features
 
-- 🔍 **Search Functionality:** Look up motorcycles by make and model.
-- 📊 **Detailed Specs Display:** View detailed specifications such as horsepower, engine type, and year.
-- 📱 **Responsive Design:** Optimized for use on both desktop and mobile devices.
+- 🔍 **Search Meals:** Easily search for meals by name using the search bar.
+- 📋 **Detailed Meal Information:** View meal details, including ingredients, instructions, category, and cultural origin.
+- 🎥 **YouTube Tutorials:** Watch related cooking tutorials (if available).
+- 💡 **Dynamic UI:** Hover effects and responsive design ensure a modern, user-friendly experience.
 
 ## 🛠️ Technologies Used
 
 - ⚛️ **React:** Frontend framework for building the user interface.
-- 🌐 **API Ninjas:** A free API service providing motorcycle data.
+- 🌐 **TheMealDB API:** Free API service providing meal and recipe data.
+- 🎨 **Bootstrap:** For responsive and visually appealing design.
 
 ## 🚀 Installation
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/your-username/motorcycle-info-fetcher.git
-   cd motorcycle-info-fetcher
-   ```
+   git clone https://github.com/PatrykSadowski0/meal-finder-app.git
+   cd meal-finder-app
+
 2. **Install dependencies:**
    ```bash
    npm install
    ```
-3. **Add API Key:**
-   ```bash
-    Sign up at API Ninjas to get your API key.
-   ```
-4. **Start the app:**
+3. **Start the app:**
    ```bash
     npm start
    ```
 ## 🎯 Usage
 
-- Enter the name or model of the motorcycle you want to search for.
-- Click the "Search" button.
-- View detailed information displayed on the page.
+1. Type the name of a meal in the search bar and click the **Search** button.
+2. Browse the list of meals and click on a meal card to view detailed information.
+3. Explore ingredients, step-by-step cooking instructions, and a cultural description of the dish.
+4. Watch the tutorial video for select recipes (if provided).
+
 
   ## 🤝 Contributing
 
   Feel free to open issues or submit pull requests if you have suggestions to improve the project.
 
-  ## 📄 License
+## 📄 License
 
-  This project is open-source and available under the MIT License.
+This project is open-source and available under the MIT License. Contributions are welcome to enhance the functionality and design.
+
