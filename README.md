@@ -1,4 +1,4 @@
-# 🍽️ Meal Finder App
+# 🍽️ Meal Fetcher
 
 This project is a React application that allows users to search for meals and view detailed information about them using the **TheMealDB API**. The app is designed to provide a smooth and visually appealing experience for users to discover recipes, ingredients, and cooking instructions.
 
@@ -19,8 +19,8 @@ This project is a React application that allows users to search for meals and vi
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/PatrykSadowski0/meal-finder-app.git
-   cd meal-finder-app
+   https://github.com/patrikinho0/Meal-Fetcher.git
+   cd Meal-Fetcher
 
 2. **Install dependencies:**
    ```bash
