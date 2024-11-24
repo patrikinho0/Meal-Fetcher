@@ -2,6 +2,8 @@
 
 This project is a React application that allows users to search for meals and view detailed information about them using the **TheMealDB API**. The app is designed to provide a smooth and visually appealing experience for users to discover recipes, ingredients, and cooking instructions.
 
+Check out the page at: https://meal-fetcher.vercel.app/
+
 ## ✨ Features
 
 - 🔍 **Search Meals:** Easily search for meals by name using the search bar.
