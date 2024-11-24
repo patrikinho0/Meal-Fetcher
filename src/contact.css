@@ -1,4 +1,8 @@
-.contact{
+* {
+    font-family: 'Arial', sans-serif;
+}
+
+.contact {
     display: flex;
     align-items: center;
     justify-content: center;

@@ -1,3 +1,7 @@
+* {
+    font-family: 'Arial', sans-serif;
+}
+
 h1 {
     text-align: center;
     font-size: 2.5rem;
@@ -12,6 +16,7 @@ h1 {
     overflow: hidden;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     background-color: #fff;
+    margin-bottom: 1rem;
 }
 
 .card:hover {
@@ -66,4 +71,75 @@ h1 {
     text-align: center;
     margin-top: 1.5rem;
     font-size: 1.1rem;
+}
+
+/* css for tablets */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .card {
+        margin-bottom: 1rem;
+    }
+
+    .card-body {
+        padding: 1rem;
+    }
+
+    .card-title {
+        font-size: 1.2rem;
+    }
+
+    .card-text {
+        font-size: 0.85rem;
+    }
+
+    .card-img-top {
+        height: 180px;
+    }
+}
+
+/* css for mobile devices */
+@media (max-width: 576px) {
+    h1 {
+        font-size: 1.75rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .navbar {
+        background-color: #fff;
+    }
+
+    .navbar-nav .nav-item {
+        margin: 0 20px;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 1rem;
+    }
+
+    .card {
+        margin-bottom: 1rem;
+    }
+
+    .card-body {
+        padding: 0.8rem;
+    }
+
+    .card-title {
+        font-size: 1.1rem;
+    }
+
+    .card-text {
+        font-size: 0.8rem;
+    }
+
+    .card-img-top {
+        height: 160px;
+    }
+
+    .text-danger {
+        font-size: 1rem;
+    }
 }

@@ -4,41 +4,48 @@ import './meal.css';
 import Loading from "./Loading/Loading";
 
 function Meal() {
+    // All the needed useStates as well as useParams for react-router-dom
     const { idMeal } = useParams();
     const [meal, setMeal] = useState([]);
     const [loading, setIsLoading] = useState(true);
 
+    // Fetching information about the chosen meal by taking idMeal and searching for it inside the API
     useEffect(() => {
         const fetchMeal = async () => {
             setIsLoading(true);
             try {
                 const response = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${idMeal}`);
                 if (!response.ok) throw new Error("Failed to fetch data");
-    
+
                 const result = await response.json();
                 console.log(result);
-    
+
                 if (result.meals && result.meals.length > 0) {
                     setMeal(result.meals[0]);
                 } else {
-                    setMeal(null);
+                    setMeal([]);
                 }
 
-                setIsLoading(false);
+                // Adding some delay to let every resource load
+                setTimeout(() => {
+                    setIsLoading(false);
+                }, 300);
             } catch (error) {
                 console.error(error);
                 setIsLoading(false);
             }
         };
-    
+
         fetchMeal();
     }, [idMeal]);
-    
 
+    // returning a Loading screen
     if (loading) return <Loading></Loading>;
 
-    if (!meal) return <p>Meal details not found</p>;
+    // returning a message for the user if the meal details are not found
+    if (!meal) return <p className="text-danger">Meal details not found.</p>;
 
+    // Process ingredients
     const ingredients = [];
     for (let i = 1; i <= 20; i++) {
         const ingredient = meal[`strIngredient${i}`];
@@ -46,13 +53,10 @@ function Meal() {
         if (ingredient && ingredient.trim() !== "") {
             ingredients.push({ ingredient, measure });
         }
-    }    
-
-    if (loading) return <Loading></Loading>
-    if (!meal) return <p className="text-danger">Meal details not found.</p>;
-
+    }
 
     return (
+        // All information about the chosen meal
         <div className="meal">
             <img src={meal.strMealThumb} alt={meal.strMeal} />
             <h1>{meal.strMeal}</h1>

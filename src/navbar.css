@@ -1,7 +1,14 @@
-/* Transparent Navbar */
+* {
+    font-family: 'Arial', sans-serif;
+}
+
 .navbar {
-    background-color: transparent;
-    box-shadow: none;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .navbar-nav {
@@ -15,8 +22,9 @@
 }
 
 .navbar-nav .nav-link {
-    color: #000;
+    color: #333;
     font-size: 1.1rem;
+    font-weight: 500;
     transition: color 0.3s ease, transform 0.3s ease;
 }
 

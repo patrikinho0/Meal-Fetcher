@@ -3,6 +3,7 @@ import './navbar.css';
 
 function Navbar() {
     return (
+        // All the needed content that is displayed inside the Navbar
         <nav className="navbar navbar-expand-lg navbar-light bg-transparent sticky-top">
             <div className="container-fluid">
                 <Link to="/" className="navbar-brand">
@@ -23,7 +24,7 @@ function Navbar() {
                             <Link to="/contact" className="nav-link px-4">Contact</Link>
                         </li>
                         <li className="nav-item">
-                            <Link to="/docs" className="nav-link px-4">Docs</Link>
+                            <Link to="/about" className="nav-link px-4">About</Link>
                         </li>
                     </ul>
                 </div>

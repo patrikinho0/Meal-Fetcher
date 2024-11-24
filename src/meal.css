@@ -1,3 +1,7 @@
+*{
+    font-family: 'Arial', sans-serif;
+}
+
 .meal{
     display: flex;
     align-items: center;
