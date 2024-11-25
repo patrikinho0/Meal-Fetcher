@@ -1,5 +1,13 @@
 * {
     font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #2e2e2e, #1f1f1f);
+    color: #e0e0e0;
 }
 
 h1 {
@@ -7,73 +15,76 @@ h1 {
     font-size: 2.5rem;
     font-weight: 600;
     margin-bottom: 2rem;
-    color: #333;
+    color: #ff9800;
 }
 
 .card {
     transition: transform 0.3s ease-out, box-shadow 0.3s ease-out, filter 0.3s ease-out;
-    border-radius: 8px;
+    border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
-    margin-bottom: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    background: #333;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .card:hover {
     transform: scale(1.05);
-    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
-    filter: brightness(1.05);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.6);
+    filter: brightness(1.1);
 }
 
 .card-body {
-    background-color: #f8f9fa;
     padding: 1.5rem;
     transition: background-color 0.3s ease;
+    background: #333;
 }
 
 .card-title {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     font-weight: bold;
-    color: #333;
+    color: #ff9800;
     text-align: center;
     margin-bottom: 0.5rem;
     transition: color 0.3s ease;
 }
 
 .card:hover .card-title {
-    color: #007bff;
+    color: #ffa726;
 }
 
 .card-text {
-    font-size: 0.9rem;
-    color: #555;
+    font-size: 1rem;
+    color: #bdbdbd;
+    text-align: center;
     transition: color 0.3s ease;
 }
 
 .card:hover .card-text {
-    color: #333;
+    color: #ffffff;
 }
 
 .card-img-top {
     object-fit: cover;
     height: 200px;
-    border-bottom: 1px solid #ddd;
-    transition: transform 0.3s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: grayscale(30%);
 }
 
 .card:hover .card-img-top {
     transform: scale(1.05);
+    filter: grayscale(0%);
 }
 
 .text-danger {
-    color: #dc3545;
+    color: #f44336;
     font-weight: bold;
     text-align: center;
     margin-top: 1.5rem;
     font-size: 1.1rem;
 }
 
-/* css for tablets */
 @media (max-width: 768px) {
     h1 {
         font-size: 2rem;
@@ -92,7 +103,7 @@ h1 {
     }
 
     .card-text {
-        font-size: 0.85rem;
+        font-size: 0.9rem;
     }
 
     .card-img-top {
@@ -100,23 +111,10 @@ h1 {
     }
 }
 
-/* css for mobile devices */
 @media (max-width: 576px) {
     h1 {
         font-size: 1.75rem;
         margin-bottom: 1.5rem;
-    }
-
-    .navbar {
-        background-color: #fff;
-    }
-
-    .navbar-nav .nav-item {
-        margin: 0 20px;
-    }
-
-    .navbar-nav .nav-link {
-        font-size: 1rem;
     }
 
     .card {
@@ -142,4 +140,32 @@ h1 {
     .text-danger {
         font-size: 1rem;
     }
+}
+
+.meals input[type="search"], .meals .form-select {
+    background: #333;
+    border: 1px solid #ff9800;
+    color: #e0e0e0;
+    padding: 10px;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+}
+
+.meals input[type="search"]:focus, .meals .form-select:focus {
+    background: #444;
+    border: 1px solid #ffa726;
+    outline: none;
+    color: #fff;
+}
+
+.meals input[type="search"]:active, .meals .form-select:active {
+    background: #555;
+    border: 1px solid #ffa726;
+    box-shadow: 0 0 8px rgba(255, 152, 38, 0.8);
+}
+
+.meals input[type="search"]:hover, .meals .form-select:hover {
+    background: #444;
+    border: 1px solid #ff9800;
+    box-shadow: 0 0 8px rgba(255, 152, 38, 0.6);
 }

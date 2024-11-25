@@ -1,31 +1,44 @@
-*{
+* {
     font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #e0e0e0;
+}
+
+body {
+    background-color: #121212;
+    line-height: 1.6;
+    overflow-x: hidden;
 }
 
 .home {
-    color: #333;
-    background-color: #f9f9f9;
-    padding: 20px;
+    background: linear-gradient(135deg, #2e2e2e, #1f1f1f);
+    text-align: center;
+    padding: 30px 20px;
     text-align: center;
 }
 
 .intro-section {
-    background-color: #007bff;
-    color: #fff;
-    padding: 30px 20px;
-    border-radius: 8px;
-    margin-bottom: 30px;
+    background: #333;
+    color: #e0e0e0;
+    padding: 40px 20px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .intro-section h1 {
-    font-size: 2.5rem;
-    margin-bottom: 15px;
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    color: #ff9800;
 }
 
 .intro-text {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     max-width: 800px;
     margin: 0 auto;
+    color: #c0c0c0;
 }
 
 .content-section {
@@ -34,75 +47,111 @@
 }
 
 section {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background: #333;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     margin-bottom: 30px;
     text-align: center;
 }
 
 h2 {
-    font-size: 1.8rem;
-    color: #007bff;
-    margin-bottom: 15px;
+    font-size: 2rem;
+    color: #ff9800;
+    margin-bottom: 20px;
 }
 
-ul, ol {
+ul,
+ol {
     font-size: 1rem;
-    color: #555;
-    margin-left: 20px;
-    line-height: 1.6;
+    color: #b0b0b0;
+    margin-left: 30px;
+    line-height: 1.8;
     text-align: left;
     display: inline-block;
 }
 
-ul li, ol li {
-    margin-bottom: 10px;
-}
-
-strong {
-    font-weight: bold;
-    color: #333;
+ul li,
+ol li {
+    margin-bottom: 15px;
+    padding-left: 5px;
+    border-left: 3px solid #ff9800;
 }
 
 footer {
     padding: 20px;
-    background-color: #007bff;
-    color: #fff;
+    background: #333;
+    color: #e0e0e0;
     border-radius: 8px;
     margin-top: 30px;
+    text-align: center;
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.3);
 }
 
 footer p {
     margin: 0;
+    font-size: 1.1rem;
+}
+
+button {
+    background-color: #ff9800;
+    color: #121212;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
     font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #e68a00;
+    transform: translateY(-2px);
+}
+
+.intro-section,
+section {
+    position: relative;
+    overflow: hidden;
+}
+
+.intro-section:hover,
+section:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    transform: translateY(-2px);
 }
 
 @media (max-width: 768px) {
     .intro-section h1 {
-        font-size: 2rem;
+        font-size: 2.4rem;
     }
 
     .intro-text {
         font-size: 1rem;
-        margin-bottom: 15px;
     }
 
     h2 {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
     }
 
-    ul, ol {
+    ul,
+    ol {
         font-size: 0.9rem;
-        margin-left: 10px;
+        margin-left: 20px;
+    }
+
+    button {
+        font-size: 0.9rem;
+    }
+
+    footer p {
+        font-size: 0.9rem;
     }
 }
 
-/* css for mobile devices */
 @media (max-width: 576px) {
     .intro-section h1 {
-        font-size: 1.75rem;
+        font-size: 2rem;
     }
 
     .intro-text {
@@ -110,18 +159,20 @@ footer p {
     }
 
     section {
-        padding: 15px;
+        padding: 20px;
     }
 
     h2 {
-        font-size: 1.3rem;
+        font-size: 1.4rem;
     }
 
-    ul, ol {
+    ul,
+    ol {
         font-size: 0.85rem;
+        margin-left: 15px;
     }
 
     footer p {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
     }
 }

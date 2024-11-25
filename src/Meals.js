@@ -4,13 +4,14 @@ import Loading from "./Loading/Loading";
 import './meals.css';
 
 function Meals() {
-
     // All the needed useStates
     const [meals, setMeals] = useState([]);
     const [searchedMeal, setSearchedMeal] = useState("");
     const [filteredMeals, setFilteredMeals] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [errorMessage, setErrorMessage] = useState("");
+    const [selectedCulture, setSelectedCulture] = useState(""); // New state for selected culture
+    const [cultures, setCultures] = useState([]); // To store unique culture options
 
     // Fetching from the API
     const fetchData = async () => {
@@ -27,7 +28,12 @@ function Meals() {
             if (result.meals) {
                 setMeals(result.meals);
                 setFilteredMeals(result.meals);
-                // Otherwise set an empty list and display an error message
+
+                // Extract unique cultures from the meal data
+                const uniqueCultures = [
+                    ...new Set(result.meals.map(meal => meal.strArea))
+                ];
+                setCultures(uniqueCultures);
             } else {
                 setMeals([]);
                 setFilteredMeals([]);
@@ -54,14 +60,15 @@ function Meals() {
         fetchData();
     }, []);
 
-    // Setting filtered meals in lower case
+    // Filter meals by searched name and selected culture
     useEffect(() => {
         setFilteredMeals(
             meals.filter((meal) =>
-                meal.strMeal.toLowerCase().includes(searchedMeal.toLowerCase())
+                meal.strMeal.toLowerCase().includes(searchedMeal.toLowerCase()) &&
+                (selectedCulture ? meal.strArea === selectedCulture : true) // Filter by culture if selected
             )
         );
-    }, [searchedMeal, meals]);
+    }, [searchedMeal, meals, selectedCulture]);
 
     return (
         <div className="meals container">
@@ -71,15 +78,30 @@ function Meals() {
                 </div>
             )}
             <h1 className="my-4">Meals</h1>
-            <div className="mb-4">
+
+            <div className="d-flex mb-4">
                 <input
-                    className="form-control me-2"
+                    className="me-2"
                     type="search"
                     placeholder="Search for a meal..."
                     aria-label="Search"
                     value={searchedMeal}
                     onChange={(e) => setSearchedMeal(e.target.value)}
                 />
+
+
+                <select
+                    className="form-select ms-2"
+                    value={selectedCulture}
+                    onChange={(e) => setSelectedCulture(e.target.value)}
+                >
+                    <option value="">All Cultures</option>
+                    {cultures.map((culture, index) => (
+                        <option key={index} value={culture}>
+                            {culture}
+                        </option>
+                    ))}
+                </select>
             </div>
 
             {errorMessage && <p className="text-danger">{errorMessage}</p>}

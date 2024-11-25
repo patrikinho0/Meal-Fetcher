@@ -4,12 +4,13 @@ import './meal.css';
 import Loading from "./Loading/Loading";
 
 function Meal() {
-    // All the needed useStates as well as useParams for react-router-dom
+
+    // all the necesarry useStates as well as useParams for react-router-dom
     const { idMeal } = useParams();
     const [meal, setMeal] = useState([]);
     const [loading, setIsLoading] = useState(true);
 
-    // Fetching information about the chosen meal by taking idMeal and searching for it inside the API
+    // Fetching from the API by the idMeal parameter
     useEffect(() => {
         const fetchMeal = async () => {
             setIsLoading(true);
@@ -26,7 +27,6 @@ function Meal() {
                     setMeal([]);
                 }
 
-                // Adding some delay to let every resource load
                 setTimeout(() => {
                     setIsLoading(false);
                 }, 300);
@@ -39,13 +39,13 @@ function Meal() {
         fetchMeal();
     }, [idMeal]);
 
-    // returning a Loading screen
+    // returning the Loading screen
     if (loading) return <Loading></Loading>;
 
-    // returning a message for the user if the meal details are not found
+    // returning information to the user if meal details haven't been found
     if (!meal) return <p className="text-danger">Meal details not found.</p>;
 
-    // Process ingredients
+    // necesarry for loop to get every ingredient from the API that particular meal has
     const ingredients = [];
     for (let i = 1; i <= 20; i++) {
         const ingredient = meal[`strIngredient${i}`];
@@ -56,15 +56,26 @@ function Meal() {
     }
 
     return (
-        // All information about the chosen meal
         <div className="meal">
-            <img src={meal.strMealThumb} alt={meal.strMeal} />
+            {meal.strYoutube && (
+                <div className="meal-video">
+                    <iframe
+                        width="100%"
+                        height="600"
+                        src={`https://www.youtube.com/embed/${meal.strYoutube.split('v=')[1]}`}
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        title="Meal Tutorial"
+                    ></iframe>
+                </div>
+            )}
+
             <h1>{meal.strMeal}</h1>
             <p><strong>Culture: </strong> {meal.strArea}</p>
             <p><strong>Category: </strong> {meal.strCategory}</p>
             <p><strong>Instructions: </strong> {meal.strInstructions}</p>
-            <h2>Ingredients:</h2>
 
+            <h2>Ingredients:</h2>
             <ul>
                 {ingredients.map((item, index) => (
                     <li key={index}>

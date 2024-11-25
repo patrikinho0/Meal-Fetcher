@@ -1,10 +1,154 @@
 * {
     font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 .contact {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #2e2e2e, #1f1f1f);
+    text-align: center;
+}
+
+.contact-container {
+    max-width: 600px;
+    padding: 30px;
+    background: #333;
+    border-radius: 15px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4);
+    position: relative;
+    color: #fff;
+}
+
+.contact-container h1 {
+    font-size: 2.5rem;
+    color: #ff9800;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.contact-container .description {
+    font-size: 1rem;
+    color: #bbb;
+    margin-bottom: 20px;
+}
+
+.contact-form {
+    display: flex;
     flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ccc;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    font-size: 1rem;
+    outline: none;
+    background-color: #444;
+    color: #fff;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #ff9800;
+    box-shadow: 0px 0px 5px rgba(255, 152, 0, 0.5);
+}
+
+.submit-btn {
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #ff9800;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #e68900;
+    transform: translateY(-2px);
+}
+
+.funny-effect {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    font-size: 2.5rem;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-container {
+        padding: 20px;
+    }
+
+    .contact-container h1 {
+        font-size: 2rem;
+    }
+
+    .contact-form .form-group input,
+    .contact-form .form-group textarea {
+        font-size: 0.9rem;
+    }
+
+    .submit-btn {
+        font-size: 1rem;
+        padding: 10px 15px;
+    }
+
+    .funny-effect {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .contact-container {
+        padding: 15px;
+    }
+
+    .contact-container h1 {
+        font-size: 1.75rem;
+    }
+
+    .submit-btn {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+    }
+
+    .funny-effect {
+        font-size: 1.5rem;
+    }
 }
